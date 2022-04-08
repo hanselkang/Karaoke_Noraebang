@@ -13,6 +13,11 @@ class TestBar(unittest.TestCase):
 
     def test_bar_name(self):
         self.assertEqual("bar_caraoke",self.bar.name )
+
+    def test_add_drink(self):
+        self.bar.add_drink(self.drink)
+        self.assertEqual(1, self.bar.stock_level(self.drink))
+        self.assertEqual(5, self.bar.stock_value())
     
     def test_bar_stock_value_0(self):
         self.assertEqual(0, self.bar.stock_value())

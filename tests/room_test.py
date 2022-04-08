@@ -66,3 +66,6 @@ class TestRoom(unittest.TestCase):
 
     def test_old_enough(self):
         self.assertEqual(True,self.room1.guest_challenge25(self.guest_1))
+
+    def caraoke_process(self):
+        
