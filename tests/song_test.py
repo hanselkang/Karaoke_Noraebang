@@ -1,8 +1,10 @@
-# from src.song import *
-# import unittest
+from src.song import *
+import unittest
 
-# class TestRoom(unittest.TestCase):
-#     def setUp(self):
-#         self.task1 = Song("Wash the Dishes", 15)
-#         self.task2 = Song("Cook Dinner", 60)
-#         self.task3 = Song("Clean Windows", 90)
+
+class TestSong(unittest.TestCase):
+    def setUp(self):
+        self.song1 = Song("Can't take my eyes off you")
+
+    def test_find_song_by_name(self):
+        self.assertEqual("Can't take my eyes off you",self.song1.name)
