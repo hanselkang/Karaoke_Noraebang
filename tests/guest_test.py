@@ -28,3 +28,4 @@ class TestGuest(unittest.TestCase):
     def test_favourite_song(self):
         self.assertEqual(
             "Wooohooo!", self.guest_1.fav_song_play(self.guest_1.fav_song))
+

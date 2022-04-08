@@ -24,3 +24,6 @@ class Room:
 
     def count_song_list(self):
         return len(self.songs_list)
+
+    def guest_challenge25(self, guest):
+        return guest.age >= 18

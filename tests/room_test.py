@@ -59,3 +59,10 @@ class TestRoom(unittest.TestCase):
             self.room1.guest_check_in(people)
         self.assertEqual(
             "Room is full", self.room1.guest_check_in(self.guest_7))
+
+    def test_sell_beer(self):
+        self.guest_1.pay_fee(self.room1.entrance_fee)
+        self.room1.guest_check_in(self.guest_1)
+
+    def test_old_enough(self):
+        self.assertEqual(True,self.room1.guest_challenge25(self.guest_1))
