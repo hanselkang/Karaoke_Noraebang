@@ -15,12 +15,15 @@ class TestRoom(unittest.TestCase):
     def test_empty_room(self):
         self.assertEqual(0, self.room1.time)
 
-    # def test_guest_name(self):
-    #     self.assertEqual("Hansel", Guest.guest_1.name)
 
     def test_guest_check_in(self):
         self.room1.guest_check_in(self.guest_1.name)
         self.assertEqual(1, len(self.room1.people_list))
+    
+    def test_guest_check_out(self):
+        self.room1.guest_check_in(self.guest_1.name)
+        self.room1.guest_check_out(self.guest_1.name)
+        self.assertEqual(0, len(self.room1.people_list))
 
     # def test_add_song_to_room(self):
     #     songs_in_room = Room.add_song_to_list(Song.song1.name)
