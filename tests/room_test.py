@@ -19,10 +19,14 @@ class TestRoom(unittest.TestCase):
     def test_guest_check_in_number(self):
         self.room1.guest_check_in(self.guest_1)
         self.assertEqual(1, len(self.room1.people_list))
-    
-    # def test_checked_in_guest_name(self):
-    #     self.room1.guest_check_in(self.guest_1)
-    #     self.assertEqual("Hansel", self.room1.people_list[0])
+
+    def test_checked_in_guest_name(self):
+        self.room1.guest_check_in(self.guest_1)
+        self.assertEqual("Hansel", self.room1.people_list[0].name)
+
+    def test_checked_in_guest_age(self):
+        self.room1.guest_check_in(self.guest_1)
+        self.assertEqual(20, self.room1.people_list[0].age)
 
     def test_guest_check_out(self):
         self.room1.guest_check_in(self.guest_1)
@@ -30,13 +34,14 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(0, len(self.room1.people_list))
 
     def test_add_song_to_room_by_title(self):
-        title_in_room = self.room1.add_song_to_list(self.song1.title)
-        self.assertEqual("Can't take my eyes off you", title_in_room)
+        self.room1.add_song_to_list(self.song1)
+        self.assertEqual("Can't take my eyes off you",
+                         self.room1.songs_list[0].title)
 
     def test_add_song_to_room_by_artist(self):
-        artist_in_room = self.room1.add_song_to_list(self.song1.artist)
-        self.assertEqual("Frankie Valli", artist_in_room)
+        self.room1.add_song_to_list(self.song1)
+        self.assertEqual("Frankie Valli", self.room1.songs_list[0].artist)
 
     def test_count_song_list(self):
-        add_song = self.room1.add_song_to_list(self.song1.artist)
+        add_song = self.room1.add_song_to_list(self.song1)
         self.assertEqual(1, self.room1.count_song_list())
