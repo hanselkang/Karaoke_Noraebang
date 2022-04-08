@@ -1,5 +1,5 @@
 class Room:
-    def __init__(self, input_number, input_time):
+    def __init__(self, input_number, time):
         self.room_num = input_number
-        self.input_time = 0
+        self.time = 0
 
