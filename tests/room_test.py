@@ -7,6 +7,7 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room1 = Room("1",0)
         self.guest_1 = Guest("Hansel", 20)
+        self.song1 = Song("Can't take my eyes off you")
 
 
     def test_find_room_number(self):
@@ -25,6 +26,6 @@ class TestRoom(unittest.TestCase):
         self.room1.guest_check_out(self.guest_1.name)
         self.assertEqual(0, len(self.room1.people_list))
 
-    # def test_add_song_to_room(self):
-    #     songs_in_room = Room.add_song_to_list(Song.song1.name)
-    #     self.assertEqual("Can't take my eyes off you", songs_in_room)
+    def test_add_song_to_room(self):
+        songs_in_room = self.room1.add_song_to_list(self.song1.name)
+        self.assertEqual("Can't take my eyes off you", songs_in_room)
