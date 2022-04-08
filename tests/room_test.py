@@ -6,8 +6,16 @@ import unittest
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room1 = Room("1", 0)
+        self.room1 = Room("1", 0, 6)
         self.guest_1 = Guest("Hansel", 20)
+        self.guest_2 = Guest("Abdul", 24)
+        self.guest_3 = Guest("Bryan", 21)
+        self.guest_4 = Guest("Charles", 28)
+        self.guest_5 = Guest("David", 29)
+        self.guest_6 = Guest("Emily", 24)
+        self.guest_7 = Guest("Frankie", 30)
+        self.guest_group = [self.guest_1,
+                            self.guest_2, self.guest_3, self.guest_4, self.guest_5, self.guest_6]
         self.song1 = Song("Can't take my eyes off you", "Frankie Valli")
 
     def test_find_room_number(self):
@@ -45,3 +53,9 @@ class TestRoom(unittest.TestCase):
     def test_count_song_list(self):
         add_song = self.room1.add_song_to_list(self.song1)
         self.assertEqual(1, self.room1.count_song_list())
+
+    def test_if_the_room_is_full(self):
+        for people in self.guest_group:
+            self.room1.guest_check_in(people)
+        self.assertEqual(
+            "Room is full", self.room1.guest_check_in(self.guest_7))
