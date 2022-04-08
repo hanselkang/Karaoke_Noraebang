@@ -6,14 +6,14 @@ import unittest
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room1 = Room("1", 0, 6)
-        self.guest_1 = Guest("Hansel", 20)
-        self.guest_2 = Guest("Abdul", 24)
-        self.guest_3 = Guest("Bryan", 21)
-        self.guest_4 = Guest("Charles", 28)
-        self.guest_5 = Guest("David", 29)
-        self.guest_6 = Guest("Emily", 24)
-        self.guest_7 = Guest("Frankie", 30)
+        self.room1 = Room("1", 0, 6, 100)
+        self.guest_1 = Guest("Hansel", 20, 50)
+        self.guest_2 = Guest("Abdul", 24, 350)
+        self.guest_3 = Guest("Bryan", 21, 56)
+        self.guest_4 = Guest("Charles", 28, 150)
+        self.guest_5 = Guest("David", 29, 20)
+        self.guest_6 = Guest("Emily", 24, 40)
+        self.guest_7 = Guest("Frankie", 30, 60)
         self.guest_group = [self.guest_1,
                             self.guest_2, self.guest_3, self.guest_4, self.guest_5, self.guest_6]
         self.song1 = Song("Can't take my eyes off you", "Frankie Valli")
@@ -59,3 +59,4 @@ class TestRoom(unittest.TestCase):
             self.room1.guest_check_in(people)
         self.assertEqual(
             "Room is full", self.room1.guest_check_in(self.guest_7))
+

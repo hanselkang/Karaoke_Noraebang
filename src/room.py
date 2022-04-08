@@ -1,10 +1,12 @@
 class Room:
-    def __init__(self, input_number, time, capacity):
+    def __init__(self, input_number, time, capacity, cash):
         self.room_num = input_number
         self.time = 0
         self.people_list = []
         self.songs_list = []
         self.capacity = capacity
+        self.cash = cash
+        self.entrance_fee = 5
 
     def guest_check_in(self, guest):
         if  len(self.people_list) < self.capacity :
@@ -15,7 +17,6 @@ class Room:
     def guest_check_out(self, guest):
         if len(self.people_list) > 0:
             self.people_list.remove(guest)
-            self.space = 0
 
     def add_song_to_list(self, song1):
         self.songs_list.append(song1)
