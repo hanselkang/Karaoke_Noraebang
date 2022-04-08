@@ -9,7 +9,7 @@ class Room:
         self.entrance_fee = 5
 
     def guest_check_in(self, guest):
-        if  len(self.people_list) < self.capacity :
+        if len(self.people_list) < self.capacity:
             self.people_list.append(guest)
         else:
             return "Room is full"
