@@ -12,6 +12,10 @@ class Room:
         if len(self.people_list) > 0:
             self.people_list.remove(guest)
 
-    def add_song_to_list(self, name):
-        self.songs_list.append(name)
+    def add_song_to_list(self, song1):
+        self.songs_list.append(song1)
         return self.songs_list[0]
+    
+    def count_song_list(self):
+        return len(self.songs_list)
+    
