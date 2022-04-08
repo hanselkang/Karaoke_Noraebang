@@ -1,4 +1,5 @@
 from src.room import Room
+from src.drink import Drink
 
 
 class Guest:
@@ -14,3 +15,9 @@ class Guest:
     def fav_song_play(self, song):
         if song == self.fav_song:
             return "Wooohooo!"
+
+    def sufficient_funds(self, beer):
+        return self.budget >= beer.price
+
+    def buy_drink(self, guest, drink):
+        return self.budget - drink.price

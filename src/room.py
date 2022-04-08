@@ -5,7 +5,7 @@ class Room:
         self.people_list = []
         self.songs_list = []
         self.capacity = capacity
-        self.cash = cash
+        self.cash = 500
         self.entrance_fee = 5
 
     def guest_check_in(self, guest):
@@ -25,5 +25,3 @@ class Room:
     def count_song_list(self):
         return len(self.songs_list)
 
-    def guest_challenge25(self, guest):
-        return guest.age >= 18
