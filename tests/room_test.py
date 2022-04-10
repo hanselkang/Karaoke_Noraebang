@@ -64,3 +64,7 @@ class TestRoom(unittest.TestCase):
         self.guest_1.pay_fee(self.room1.entrance_fee)
         self.room1.guest_check_in(self.guest_1)
 
+    # def test_receive_guest(self):
+    #     self.guest_1.pay_fee(self.room1.entrance_fee)
+    #     self.assertEqual(True, self.guest_1.sufficient_funds(self.drink))
+

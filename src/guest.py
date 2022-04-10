@@ -8,6 +8,7 @@ class Guest:
         self.age = input_age
         self.budget = input_budget
         self.fav_song = fav_song
+        self.drink = Drink("Beer", 5)
 
     def pay_fee(self, fee):
         self.budget -= fee
@@ -19,5 +20,6 @@ class Guest:
     def sufficient_funds(self, beer):
         return self.budget >= beer.price
 
-    def buy_drink(self, guest, drink):
-        return self.budget - drink.price
+    def buy_drink(self, beer):
+        if self.sufficient_funds(beer):
+            self.budget -= beer.price

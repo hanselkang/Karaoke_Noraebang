@@ -38,8 +38,4 @@ class Bar:
             return False
         return True
 
-    # def serve(self, guest, drink):
-    #     if self.can_serve(guest, drink):
-    #         self.stock[drink] -= 1
-    #         guest.buy_drink( guest, drink)
-    #         Room.self.cash += drink.price
+
